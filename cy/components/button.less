@@ -1,0 +1,16 @@
+@cyButtonMainColor: @cyMainColor;
+
+.cy-button
+{
+	.cy-rounded; .cy-bordered; .cy-bg-gradient; .cy-q-transition(box-shadow);
+	&:active
+	{
+		background-image: none;
+		background-color: @cyButtonMainColor;
+	}
+	&:hover
+	{
+		.cy-shadowed;
+	}
+	color: white;
+}

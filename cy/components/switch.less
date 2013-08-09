@@ -1,0 +1,67 @@
+// CORE
+
+label.cy-switch > input[type=checkbox]
+{
+	display: none;
+}
+label.cy-switch > span
+{
+	display: inline-block;
+	height: 1.2em;
+	position: relative;
+}
+label.cy-switch > span:after
+{
+	.cy-bbox;
+	transition: box-shadow 180ms linear;
+	content: attr(data-unchecked);
+	display: inline-block;
+	height: 100%;
+	text-align: center;
+}
+label.cy-switch > span:before
+{
+	.cy-bbox;
+	background-clip: padding-box;
+	position: absolute;
+	display: inline-block;
+	content: '';
+	height: 100%;
+	border: 2px solid transparent;
+	transition: right 180ms linear;
+}
+label.cy-switch > input[type=checkbox]:checked + span:after
+{
+	content: attr(data-checked);
+	padding-left: 0px;
+}
+label.cy-switch > input[type=checkbox]:checked + span:before
+{
+	right: 0px;
+}
+
+// PARAMETERS
+
+label.cy-switch > span:hover:after
+{
+	.cy-shadowed;
+}
+label.cy-switch > span:after
+{
+	.cy-bordered; .cy-rounded; .cy-bg-gradient(#222);
+	width: @cySwitchWidth;
+	padding-left: @cySwitchWidth/2;
+	color: white;
+}
+label.cy-switch > span:before
+{
+	.cy-rounded;
+	background-color: @cySwitchBackgroundColor;
+	width: @cySwitchWidth/2;
+	right: @cySwitchWidth/2;
+}
+label.cy-switch > input[type=checkbox]:checked + span:after
+{
+	.cy-bg-gradient;
+	padding-right: @cySwitchWidth/2;
+}
